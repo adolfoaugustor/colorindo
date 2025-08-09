@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Colorindo com FÉ</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: 'Arial', sans-serif;
+         line-height: 1.6;
+         color: #333;
+         background-color: #f8f9fa;
+      }
+
+      .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 20px;
+      }
+
+      /* Header */
+      .header {
+         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         color: white;
+         text-align: center;
+         padding: 60px 0;
+      }
+
+      .header img {
+         max-width: 300px;
+         margin-bottom: 30px;
+         border-radius: 15px;
+      }
+
+      .hero-image {
+         max-width: 400px;
+         margin: 30px auto;
+         border-radius: 20px;
+         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      }
+
+      .header h1 {
+         font-size: 3.5rem;
+         font-weight: bold;
+         margin-bottom: 20px;
+         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+
+      .header p {
+         font-size: 1.5rem;
+         margin-bottom: 30px;
+         opacity: 0.9;
+      }
+
+      .features {
+         display: flex;
+         justify-content: center;
+         gap: 40px;
+         margin: 30px 0;
+         flex-wrap: wrap;
+      }
+
+      .feature {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         background: rgba(255,255,255,0.1);
+         padding: 15px 25px;
+         border-radius: 25px;
+         backdrop-filter: blur(10px);
+      }
+
+      .feature span {
+         font-size: 1.5rem;
+      }
+
+      /* CTA Button */
+      .cta-button {
+         display: inline-block;
+         background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+         color: white;
+         padding: 20px 40px;
+         text-decoration: none;
+         border-radius: 50px;
+         font-size: 1.3rem;
+         font-weight: bold;
+         text-transform: uppercase;
+         box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+         transition: all 0.3s ease;
+         margin: 20px 0;
+      }
+
+      .cta-button:hover {
+         transform: translateY(-3px);
+         box-shadow: 0 12px 35px rgba(238, 90, 36, 0.6);
+      }
+
+      /* Products Section */
+      .products-section {
+         padding: 80px 0;
+         background: white;
+      }
+
+      .products-section h2 {
+         text-align: center;
+         font-size: 2.5rem;
+         margin-bottom: 20px;
+         color: #2c3e50;
+      }
+
+      .products-section p {
+         text-align: center;
+         font-size: 1.2rem;
+         margin-bottom: 50px;
+         color: #666;
+         max-width: 600px;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .products-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 30px;
+         margin-bottom: 50px;
+      }
+
+      .product-card {
+         text-align: center;
+         background: #f8f9fa;
+         padding: 20px;
+         border-radius: 15px;
+         transition: transform 0.3s ease;
+      }
+
+      .product-card:hover {
+         transform: translateY(-5px);
+      }
+
+      .product-card img {
+         width: 100%;
+         max-width: 200px;
+         border-radius: 10px;
+         margin-bottom: 15px;
+      }
+
+      .product-card h3 {
+         font-size: 1.1rem;
+         color: #2c3e50;
+      }
+
+      /* Usage Section */
+      .usage-section {
+         padding: 80px 0;
+         background: #f8f9fa;
+      }
+
+      .usage-section h2 {
+         text-align: center;
+         font-size: 2.5rem;
+         margin-bottom: 20px;
+         color: #2c3e50;
+      }
+
+      .usage-section .container p {
+         text-align: center;
+         font-size: 1.2rem;
+         margin-bottom: 50px;
+         color: #666;
+      }
+
+      .usage-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 40px;
+      }
+
+      .usage-card {
+         background: white;
+         padding: 30px;
+         border-radius: 15px;
+         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+
+      .usage-card h3 {
+         font-size: 1.5rem;
+         margin-bottom: 15px;
+         color: #2c3e50;
+      }
+
+      .usage-card p {
+         color: #666;
+         line-height: 1.8;
+      }
+
+      /* Benefits Section */
+      .benefits-section {
+         padding: 80px 0;
+         background: white;
+      }
+
+      .benefits-section h2 {
+         text-align: center;
+         font-size: 2.5rem;
+         margin-bottom: 20px;
+         color: #2c3e50;
+      }
+
+      .benefits-section .container p {
+         text-align: center;
+         font-size: 1.2rem;
+         margin-bottom: 50px;
+         color: #666;
+      }
+
+      .benefits-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 30px;
+      }
+
+      .benefit-card {
+         background: #f8f9fa;
+         padding: 30px;
+         border-radius: 15px;
+         text-align: center;
+      }
+
+      .benefit-card h3 {
+         font-size: 1.3rem;
+         margin-bottom: 15px;
+         color: #2c3e50;
+      }
+
+      .benefit-card p {
+         color: #666;
+         line-height: 1.8;
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+         padding: 80px 0;
+         background: #f8f9fa;
+      }
+
+      .testimonials-section h2 {
+         text-align: center;
+         font-size: 2.5rem;
+         margin-bottom: 10px;
+         color: #2c3e50;
+      }
+
+      .rating {
+         text-align: center;
+         font-size: 1.2rem;
+         margin-bottom: 50px;
+         color: #666;
+      }
+
+      .testimonials-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 20px;
+      }
+
+      .testimonial-card img {
+         width: 100%;
+         border-radius: 10px;
+         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+         padding: 80px 0;
+         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         color: white;
+         text-align: center;
+      }
+
+      .offer-banner {
+         background: rgba(255,255,255,0.1);
+         padding: 20px;
+         border-radius: 15px;
+         margin-bottom: 40px;
+         backdrop-filter: blur(10px);
+      }
+
+      .offer-banner h3 {
+         font-size: 1.5rem;
+         margin-bottom: 10px;
+      }
+
+      .pricing-cards {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 30px;
+         max-width: 1145px;
+         margin: 0 auto;
+         padding: 50px;
+      }
+
+      .pricing-card {
+         background: white;
+         color: #333;
+         padding: 30px 15px;
+         border-radius: 20px;
+         position: relative;
+         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+
+      .pricing-card.popular {
+         transform: scale(1.05);
+         border: 3px solid #ff6b6b;
+      }
+
+      .popular-badge {
+         position: absolute;
+         top: -15px;
+         left: 50%;
+         transform: translateX(-50%);
+         background: #ff6b6b;
+         color: white;
+         padding: 8px 20px;
+         border-radius: 20px;
+         font-weight: bold;
+         font-size: 0.9rem;
+      }
+
+      .price-old {
+         text-decoration: line-through;
+         color: #999;
+         font-size: 1.2rem;
+      }
+
+      .price-new {
+         font-size: 2.5rem;
+         font-weight: bold;
+         color: #2c3e50;
+         margin: 10px 0;
+      }
+
+      .savings {
+         color: #27ae60;
+         font-weight: bold;
+         margin-bottom: 20px;
+      }
+
+      .features-list {
+         text-align: left;
+         margin: 20px 0;
+      }
+
+      .features-list li {
+         list-style: none;
+         padding: 8px 0;
+         position: relative;
+         padding-left: 25px;
+      }
+
+      .features-list li:before {
+         content: "✓";
+         position: absolute;
+         left: 0;
+         color: #27ae60;
+         font-weight: bold;
+      }
+
+      .bonus-section {
+         background: #f8f9fa;
+         padding: 20px;
+         border-radius: 10px;
+         margin: 20px 0;
+      }
+
+      .bonus-item {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         margin: 10px 0;
+         padding: 10px;
+         background: white;
+         border-radius: 8px;
+      }
+
+      .bonus-price {
+         color: #27ae60;
+         font-weight: bold;
+         margin-left: auto;
+      }
+
+      .bonus-images {
+         display: flex;
+         gap: 10px;
+         margin: 15px 0;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+
+      .bonus-images img {
+         width: 60px;
+         height: 60px;
+         border-radius: 8px;
+         object-fit: cover;
+      }
+
+      /* Security Section */
+      .security-section {
+         padding: 60px 0;
+         background: white;
+         text-align: center;
+      }
+
+      .security-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         gap: 30px;
+         margin-top: 30px;
+      }
+
+      .security-item {
+         padding: 20px;
+      }
+
+      .security-item h4 {
+         font-size: 1.2rem;
+         margin-bottom: 10px;
+         color: #2c3e50;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+         padding: 80px 0;
+         background: #f8f9fa;
+      }
+
+      .faq-section h2 {
+         text-align: center;
+         font-size: 2.5rem;
+         margin-bottom: 50px;
+         color: #2c3e50;
+      }
+
+      .faq-item {
+         background: white;
+         margin-bottom: 15px;
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .faq-question {
+         padding: 20px;
+         background: #2c3e50;
+         color: white;
+         cursor: pointer;
+         font-weight: bold;
+         transition: background 0.3s ease;
+      }
+
+      .faq-question:hover {
+         background: #34495e;
+      }
+
+      .faq-answer {
+         padding: 20px;
+         display: none;
+         color: #666;
+         line-height: 1.8;
+      }
+
+      .faq-answer.active {
+         display: block;
+      }
+
+      /* Footer */
+      .footer {
+         background: #2c3e50;
+         color: white;
+         text-align: center;
+         padding: 40px 0;
+      }
+
+      .whatsapp-button {
+         display: inline-block;
+         background: #25d366;
+         color: white;
+         padding: 15px 30px;
+         text-decoration: none;
+         border-radius: 25px;
+         font-weight: bold;
+         margin-top: 20px;
+         transition: all 0.3s ease;
+      }
+
+      .whatsapp-button:hover {
+         background: #128c7e;
+         transform: translateY(-2px);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+         .header h1 {
+            font-size: 2.5rem;
+         }
+
+         .header p {
+            font-size: 1.2rem;
+         }
+
+         .features {
+            flex-direction: column;
+            align-items: center;
+         }
+
+         .products-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+         }
+
+         .usage-grid {
+            grid-template-columns: 1fr;
+         }
+
+         .benefits-grid {
+            grid-template-columns: 1fr;
+         }
+
+         .testimonials-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         }
+
+         .pricing-cards {
+            grid-template-columns: 1fr;
+         }
+
+         .pricing-card.popular {
+            transform: none;
+         }
+
+         .container {
+            padding: 0 15px;
+         }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(30px);
+         }
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .fade-in {
+         animation: fadeInUp 0.6s ease-out;
+      }
+
+      /* Floating WhatsApp */
+      .floating-whatsapp {
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         background: #25d366;
+         color: white;
+         width: 60px;
+         height: 60px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-decoration: none;
+         font-size: 1.5rem;
+         box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+         z-index: 1000;
+         transition: all 0.3s ease;
+      }
+
+      .floating-whatsapp:hover {
+         transform: scale(1.1);
+         box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      }
+   </style>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+      <div class="container">
+         <img src="assets/colorindo-com-fe.jfif" alt="Luz do Céu Kids" class="fade-in">
+         
+         <img src="assets/35livros.png" alt="35 Livros de Colorir Cristãos" class="hero-image fade-in">
+         
+         <h1 class="fade-in">35 Livros de Colorir Cristãos</h1>
+         <p class="fade-in">Transforme momentos especiais com sua família, célula e escola dominical</p>
+         
+         <div class="features fade-in">
+            <div class="feature">
+               <span>⭐</span>
+               <span>Células</span>
+            </div>
+            <div class="feature">
+               <span>🏠</span>
+               <span>Escola Dominical</span>
+            </div>
+            <div class="feature">
+               <span>❤️</span>
+               <span>Devocional Familiar</span>
+            </div>
+         </div>
+         
+         <a href="#oferta" class="cta-button fade-in">QUERO VER AS OFERTAS</a>
+      </div>
+   </header>
+
+   <!-- Products Section -->
+   <section class="products-section">
+      <div class="container">
+         <h2>Conheça Nossos Livros Cristãos</h2>
+         <p>Histórias bíblicas cuidadosamente ilustradas para ensinar valores cristãos de forma lúdica e educativa</p>
+         
+         <div class="products-grid">
+            <div class="product-card">
+               <img src="assets/arca-de-noe.png" alt="A Arca de Noé">
+               <h3>A Arca de Noé</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/pascoa-crista.png" alt="Páscoa Cristã">
+               <h3>Páscoa Cristã</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/davi-e-golias.png" alt="Davi e Golias">
+               <h3>Davi e Golias</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/jonas-e-a-baleia.png" alt="Jonas e a Baleia">
+               <h3>Jonas e a Baleia</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/adao-e-eva.png" alt="Adão e Eva">
+               <h3>Adão e Eva</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/moises.png" alt="Moisés">
+
+               <h3>Moisés</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/pedrodiscipulo.png" alt="Pedro Discípulo">
+               <h3>Pedro Discípulo</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/criacao-do-mundo.png" alt="A Criação do Mundo">
+               <h3>A Criação do Mundo</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/capa-menina.webp" alt="Cristão Menina">
+               <h3>Cristão Menina</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/capa-menino.webp" alt="Cristão Menino">
+               <h3>Cristão Menino</h3>
+            </div>
+            <div class="product-card">
+               <img src="assets/capa-yeshua.webp" alt="Yeshua">
+               <h3>Yeshua</h3>
+            </div>
+         </div>
+         
+         <div style="text-align: center;">
+            <a href="#oferta" class="cta-button">QUERO VER AS OFERTAS</a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Usage Section -->
+   <section class="usage-section">
+      <div class="container">
+         <h2>Onde Usar Nossos Livros</h2>
+         <p>Versatilidade comprovada em diversos contextos cristãos</p>
+         
+         <div class="usage-grid">
+            <div class="usage-card">
+               <h3>Células e Grupos</h3>
+               <p>Transforme suas células em momentos especiais! Engaje crianças e fortaleça vínculos familiares com atividades que ensinam enquanto divertem.</p>
+            </div>
+            <div class="usage-card">
+               <h3>Escola Dominical</h3>
+               <p>Revolucione suas aulas! Recursos visuais profissionais que tornam o aprendizado bíblico interativo, memorável e cheio de significado.</p>
+            </div>
+            <div class="usage-card">
+               <h3>Devocional Familiar</h3>
+               <p>Crie tradições duradouras! Fortaleça a fé em família com momentos especiais que ensinam valores cristãos de forma natural e divertida.</p>
+            </div>
+            <div class="usage-card">
+               <h3>Ministério Infantil</h3>
+               <p>Potencialize seu ministério! Material profissional que facilita o ensino bíblico e mantém as crianças atentas e participativas.</p>
+            </div>
+            <div class="usage-card">
+               <h3>Aconselhamento</h3>
+               <p>Ferramenta terapêutica! Ajude crianças a expressarem sentimentos e aprender valores através da arte e reflexão bíblica.</p>
+            </div>
+            <div class="usage-card">
+               <h3>Eventos Especiais</h3>
+               <p>Momentos únicos! Ideal para retiros, acampamentos, festivais e eventos especiais da igreja com atividades que marcam vidas.</p>
+            </div>
+         </div>
+         
+         <div style="text-align: center;">
+            <a href="#oferta" class="cta-button">QUERO VER AS OFERTAS</a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Benefits Section -->
+   <section class="benefits-section">
+      <div class="container">
+         <h2>Benefícios Únicos e Comprovados</h2>
+         <p>Para o desenvolvimento das crianças</p>
+         
+         <div class="benefits-grid">
+            <div class="benefit-card">
+               <h3>Valores Cristãos Sólidos</h3>
+               <p>Histórias bíblicas cuidadosamente adaptadas que ensinam amor, fé, perdão e bondade de forma natural e memorável</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Desenvolvimento Completo</h3>
+               <p>Estimula criatividade, coordenação motora fina, concentração e habilidades cognitivas essenciais para o crescimento</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Tempo de Qualidade</h3>
+               <p>Momentos especiais em família longe das telas, fortalecendo vínculos e criando memórias duradouras</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Acesso Vitalício</h3>
+               <p>Download instantâneo após compra, imprima ilimitadamente, use offline, sem dependência de internet</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Conteúdo Seguro</h3>
+               <p>Material 100% cristão, livre de violência, desenvolvido por educadores cristãos experientes</p>
+            </div>
+            <div class="benefit-card">
+               <h3>Qualidade Premium</h3>
+               <p>Ilustrações profissionais, alta resolução para impressão, papel e formato otimizados para crianças</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Testimonials Section -->
+   <section class="testimonials-section">
+      <div class="container">
+         <h2>Depoimentos Reais dos Nossos Clientes</h2>
+         <div class="rating">4,9/5 - 347 avaliações</div>
+         
+         <div class="testimonials-grid">
+            <div class="testimonial-card">
+               <img src="assets/depoimento.jpg" alt="Depoimento de Sara Pereira">
+            </div>
+            <div class="testimonial-card">
+               <img src="assets/depoimento1.jpg" alt="Depoimento de Cliente Confirmação">
+            </div>
+            <div class="testimonial-card">
+               <img src="assets/depoimento2.jpg" alt="Depoimento de Cliente Fiel">
+            </div>
+            <div class="testimonial-card">
+               <img src="assets/depoimento3.jpg" alt="Depoimento de Feedback Positivo">
+            </div>
+            <div class="testimonial-card">
+               <img src="assets/depoimento4.jpg" alt="Depoimento de Cliente Satisfeita">
+            </div>
+            <div class="testimonial-card">
+               <img src="assets/depoimento5.jpg" alt="Depoimento de Ludyany Guimarães">
+            </div>
+            <div class="testimonial-card">
+               <img src="assets/depoimento6.jpg" alt="Depoimento de Luciana">
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Pricing Section -->
+   <section class="pricing-section" id="oferta">
+      <div class="container">
+         <div class="offer-banner">
+            <h3>OFERTA LIMITADA - Apenas no dia 27/07/25</h3>
+         </div>
+         
+         <h2>Escolha Sua Oferta Especial</h2>
+         <p>Livros de qualidade profissional para enriquecer seus momentos de fé</p>
+
+         <div class="pricing-cards">
+            <div class="pricing-card">
+               <h3>Pacote Básico</h3>
+               <div class="price-old">R$ 47,00</div>
+               <div style="color: #e74c3c; font-weight: bold; margin: 10px 0;">-79%</div>
+               <div class="price-new">R$ 10,00</div>
+               <div class="savings">Você economiza R$ 37,00</div>
+               
+               <ul class="features-list">
+                  <li>35 Livros de Colorir Completos</li>
+                  <li>Download Imediato</li>
+                  <li>Acesso Vitalício</li>
+                  <li>Garantia de 7 dias</li>
+               </ul>
+               
+               <a href="https://pay.kiwify.com.br/byaeuOo" class="cta-button" style="width: 100%; text-align: center; margin-top: 20px;">QUERO O PACOTE BÁSICO</a>
+            </div>
+            
+            <div class="pricing-card popular">
+               <div class="popular-badge">MAIS VENDIDO</div>
+               <h3>Pacote Premium</h3>
+               <div class="price-old">R$ 73,70</div>
+               <div style="color: #e74c3c; font-weight: bold; margin: 10px 0;">-77%</div>
+               <div class="price-new">R$ 17,00</div>
+               <div class="savings">Você economiza R$ 56,70</div>
+               
+               <h4 style="margin: 20px 0 15px 0; color: #2c3e50;">TUDO DO PACOTE BÁSICO +</h4>
+               
+               <div class="bonus-section">
+                  <div class="bonus-item">
+                        <span>🎁</span>
+                        <span><strong>BÔNUS 1:</strong> Desafio Bíblico (7 dias)</span>
+                        <span class="bonus-price">R$ 5,90</span>
+                  </div>
+                  
+                  <div class="bonus-item">
+                        <span>🎁</span>
+                        <span><strong>BÔNUS 2:</strong> Versículos Ilustrados para memorização</span>
+                        <span class="bonus-price">R$ 9,90</span>
+                  </div>
+                  
+                  <div class="bonus-images">
+                        <img src="https://luzdoceukidsbr.netlify.app/assets/image_1753440167020-BtEfqc-k.png" alt="Versículo 1">
+                        <img src="https://luzdoceukidsbr.netlify.app/assets/image_1753440170263-vn8CxeDA.png" alt="Versículo 2">
+                        <img src="https://luzdoceukidsbr.netlify.app/assets/image_1753440173833-CST0qpYL.png" alt="Versículo 3">
+                        <img src="https://luzdoceukidsbr.netlify.app/assets/image_1753440179181-D9GSxIRi.png" alt="Versículo 4">
+                        <img src="https://luzdoceukidsbr.netlify.app/assets/image_1753440190840-5APnGjdy.png" alt="Versículo 5">
+                  </div>
+                  
+                  <div class="bonus-item">
+                        <span>🎁</span>
+                        <span><strong>BÔNUS 3:</strong> Plano Devocional</span>
+                        <span class="bonus-price">R$ 10,90</span>
+                  </div>
+               </div>
+               <p>OBS: Lembra de marcar a caixinha pra adicionar o pacote Premium!</p>
+               <a href="https://pay.kiwify.com.br/byaeuOo" class="cta-button" style="width: 100%; text-align: center; margin-top: 20px;">QUERO O PACOTE PREMIUM</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Security Section -->
+   <section class="security-section">
+      <div class="container">
+         <h2>🔒 Compra 100% Segura</h2>
+         
+         <div class="security-grid">
+            <div class="security-item">
+               <h4>Garantia de 7 Dias</h4>
+               <p>Se por qualquer motivo você não ficar 100% satisfeita com nossos livros de colorir, devolvemos seu dinheiro sem perguntas!</p>
+               <ul style="text-align: left; margin-top: 15px;">
+                  <li>✓ Sem burocracias</li>
+                  <li>✓ Reembolso total</li>
+                  <li>✓ Compra 100% segura</li>
+               </ul>
+            </div>
+            
+            <div class="security-item">
+               <h4>Pagamento Seguro</h4>
+               <p>Sua compra é protegida pelos melhores sistemas de segurança. Dados criptografados e transação 100% segura.</p>
+               <ul style="text-align: left; margin-top: 15px;">
+                  <li>✓ SSL Certificado</li>
+                  <li>✓ Dados protegidos</li>
+                  <li>✓ Transação segura</li>
+               </ul>
+            </div>
+            
+            <div class="security-item">
+               <h4>Acesso Imediato</h4>
+               <p>Após a confirmação do pagamento, você recebe imediatamente todos os 35 livros de colorir em seu email.</p>
+               <ul style="text-align: left; margin-top: 15px;">
+                  <li>✓ Download instantâneo</li>
+                  <li>✓ Arquivos em alta qualidade</li>
+                  <li>✓ Suporte incluso</li>
+               </ul>
+            </div>
+         </div>
+         
+         <div style="margin-top: 40px;">
+            <p><strong>✓Pagamento processado por plataforma segura</strong></p>
+            <p><strong>✓Criptografia SSL de 256 bits</strong></p>
+            <p><strong>✓Garantia de reembolso em 7 dias</strong></p>
+            <p><strong>✓Download imediato após confirmação</strong></p>
+            <p><strong>✓Suporte dedicado via WhatsApp</strong></p>
+            <p style="margin-top: 20px; font-size: 1.1rem;"><strong>Aceitos todos os cartões e PIX</strong></p>
+         </div>
+      </div>
+   </section>
+
+   <!-- FAQ Section -->
+   <section class="faq-section">
+      <div class="container">
+         <h2>Perguntas Frequentes</h2>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Como recebo os livros?</div>
+            <div class="faq-answer">Após a confirmação do pagamento, você receberá um email com o link para download de todos os 35 livros de colorir em formato PDF de alta qualidade.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Posso imprimir quantas vezes quiser?</div>
+            <div class="faq-answer">Sim! Você tem acesso vitalício e pode imprimir os livros quantas vezes desejar, para uso pessoal, familiar, células e escola dominical.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Qual a faixa etária recomendada?</div>
+            <div class="faq-answer">Os livros são ideais para crianças de 3 a 12 anos, com diferentes níveis de complexidade para acompanhar o desenvolvimento da criança.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Os arquivos funcionam em qualquer impressora?</div>
+            <div class="faq-answer">Sim! Os arquivos estão em formato PDF otimizado para impressão em qualquer impressora doméstica ou profissional, em papel A4 comum.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Preciso de internet para usar os livros?</div>
+            <div class="faq-answer">Não! Após o download, você pode usar os livros offline. Imprima e use quando e onde quiser, sem dependência de internet.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Como funciona a garantia de 7 dias?</div>
+            <div class="faq-answer">Se você não ficar satisfeita com o material, basta entrar em contato conosco em até 7 dias e devolvemos 100% do seu dinheiro, sem perguntas.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Que tipo de papel devo usar?</div>
+            <div class="faq-answer">Recomendamos papel sulfite A4 comum (75g) ou papel mais grosso (120g) para melhor resultado. Evite papel muito fino que pode borrar.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Os livros têm versículos bíblicos?</div>
+            <div class="faq-answer">Sim! Cada livro contém versículos bíblicos relacionados à história, ajudando no aprendizado e memorização das escrituras.</div>
+         </div>
+         
+         <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Quanto tempo demora para receber?</div>
+            <div class="faq-answer">O acesso é imediato! Assim que o pagamento for confirmado (geralmente em poucos minutos), você recebe o email com os links de download.</div>
+         </div>
+         
+         <div style="text-align: center; margin-top: 40px;">
+            <a href="https://pay.kiwify.com.br/byaeuOo?coupon=PAPAI" class="cta-button">TIREI MINHAS DÚVIDAS, QUERO COMPRAR</a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+      <div class="container">
+         <h3>💬 Dúvidas? Fale conosco!</h3>
+         <p>Nossa equipe está pronta para ajudar você</p>
+         <a href="https://wa.me/5585989428057?text=Olá! Tenho interesse nos livros de colorir cristãos" class="whatsapp-button" target="_blank">Falar no WhatsApp</a>
+      </div>
+   </footer>
+
+   <!-- Floating WhatsApp -->
+   <a href="https://wa.me/5585989428057?text=Olá! Tenho interesse nos livros de colorir cristãos" class="floating-whatsapp" target="_blank">
+      💬
+   </a>
+
+   <script>
+      // FAQ Toggle
+      function toggleFaq(element) {
+         const answer = element.nextElementSibling;
+         const isActive = answer.classList.contains('active');
+         
+         // Close all FAQ answers
+         document.querySelectorAll('.faq-answer').forEach(item => {
+            item.classList.remove('active');
+         });
+         
+         // Open clicked FAQ if it wasn't active
+         if (!isActive) {
+            answer.classList.add('active');
+         }
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+         anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+               target.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+               });
+            }
+         });
+      });
+
+      // Add fade-in animation on scroll
+      const observerOptions = {
+         threshold: 0.1,
+         rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add('fade-in');
+            }
+         });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('section').forEach(section => {
+         observer.observe(section);
+      });
+
+      // Track clicks for analytics (replace with your tracking code)
+      document.querySelectorAll('.cta-button').forEach(button => {
+         button.addEventListener('click', function() {
+            // Add your tracking code here
+            console.log('CTA clicked:', this.textContent);
+         });
+      });
+   </script>
+</body>
+</html>
