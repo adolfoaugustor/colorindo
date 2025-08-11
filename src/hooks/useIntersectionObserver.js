@@ -1,34 +1,41 @@
-import { useEffect, useRef } from 'react';
+// src/hooks/useIntersectionObserver.js
+import { useCallback, useEffect, useState } from 'react';
 
 function useIntersectionObserver(options = {}) {
-   const ref = useRef(null);
-   
+   const [node, setNode] = useState(null);
+
+   // Callback ref: React chamará isso com o elemento DOM atual
+   const ref = useCallback((el) => {
+      setNode(el);
+   }, []);
+
    useEffect(() => {
+      if (!node) return;
+
       const observerOptions = {
-         threshold: options.threshold || 0.1,
-         rootMargin: options.rootMargin || '0px 0px -50px 0px'
+         threshold: options.threshold ?? 0.1,
+         rootMargin: options.rootMargin ?? '0px 0px -50px 0px',
       };
 
-      const observer = new IntersectionObserver(function(entries) {
-         entries.forEach(entry => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
          if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
+            // Opcional: pare após a primeira interseção
+            observer.unobserve(entry.target);
          }
          });
       }, observerOptions);
 
-      if (ref.current) {
-         observer.observe(ref.current);
-      }
+      observer.observe(node);
 
       return () => {
-         if (ref.current) {
-         observer.unobserve(ref.current);
-         }
+         observer.unobserve(node);
+         observer.disconnect();
       };
-   }, [options.threshold, options.rootMargin]);
+   }, [node, options.threshold, options.rootMargin]);
 
-  return ref;
+   return ref; // Uso: <div ref={ref} />
 }
 
 export default useIntersectionObserver;
